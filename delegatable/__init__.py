@@ -1,1 +1,1 @@
-from .delegatable import Delegatable, MetaDelegatable
+from .delegatable import delegatable, delegate
