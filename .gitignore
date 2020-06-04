@@ -1,0 +1,16 @@
+build/
+dist/
+delegatable.egg-info/
+.cache/
+_cache/
+__pycache__/
+.coverage
+cover/
+.cov2emacs.log
+vendor/
+package/
+.idea/
+.mypy_cache/
+htmlcov/
+.pytest_cache/
+venv/
