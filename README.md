@@ -5,6 +5,9 @@
 
 Delegatable is a simple Python alternative to Ruby on Rails' delegate module.
 
+- Inheritance Safe
+- No dependent libraries
+
 
 # Install
 ```sh
