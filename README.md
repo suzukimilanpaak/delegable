@@ -15,7 +15,7 @@ pip install delegatable
 
 #### Basic Usage
 
-Define decorator called @delegatable for class on the top.
+Place @delegatable on the top of a class you want to make delegatable.
 
 ```python
 from delegatable import delegatable
@@ -42,7 +42,7 @@ assert que.all == [2]
 
 #### Inheritance Safe
 
-It works with classes inheriting its parent with @delegatable defined without any problem. 
+It works with classes inheriting its parent with @delegatable defined without any problem.
 ```
 class DecoQueue2(DecoQueue):
     def __init__(self, name='default_queue'):
