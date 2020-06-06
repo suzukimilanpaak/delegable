@@ -46,7 +46,7 @@ assert que.all == [2]
 #### Inheritance Safe
 
 It works with classes inheriting its parent with @delegatable defined without any problem.
-```
+```python
 class DecoQueue2(DecoQueue):
     def __init__(self, name='default_queue'):
         super().__init__(name)
@@ -67,7 +67,7 @@ assert que2.all == [2]
 The decorator offers a property, `delegates` to define delegates all at once. Note it overwrites whole delegates but doesn't merge delegates.
 
 
-```
+```python
 class DecoQueue:
     def __init__(self, name='default_queue'):
         self._name = name
