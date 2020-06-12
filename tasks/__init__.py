@@ -36,7 +36,7 @@ def test_all(context):
     args = [
         "--quiet",
         "--cov=tests",
-        "--cov=delegatable",
+        "--cov=delegable",
         "--cov-fail-under=100",
         "--doctest-modules",
         "--flake8",
@@ -56,7 +56,7 @@ def type_check(context):
     Runs typechecking
     """
     log.info("Typechecking...")
-    cmd = "mypy --ignore-missing-imports --strict-optional delegatable tests"
+    cmd = "mypy --ignore-missing-imports --strict-optional delegable tests"
     log.info(cmd)
     result = run(cmd)
     log.info("Completed Typecheck")

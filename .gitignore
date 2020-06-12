@@ -1,6 +1,6 @@
 build/
 dist/
-delegatable.egg-info/
+delegable.egg-info/
 .cache/
 _cache/
 __pycache__/
@@ -14,3 +14,4 @@ package/
 htmlcov/
 .pytest_cache/
 venv/
+.tox/

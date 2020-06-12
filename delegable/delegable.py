@@ -1,15 +1,16 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 Convenient classes to enable delegate
-..codeauthor Tatsuya Suzuki <tatsuya.suzuki@nftlearning.com>
-'''
+"""
 import copy
 import inspect
 import logging as log
 from typing import Sequence, Any, Dict, Tuple, Callable, Union
 
 
-def delegatable(cls):
+def delegator(cls):
+    """
+    A decorator for class, which delegates its functions to a decolated class
+    """
     def _new(func):
         def _wrap(cls, *args, **kwargs):
             instance = func(cls)
@@ -23,7 +24,7 @@ def delegatable(cls):
 
         If any found, raises AttributeError.
         """
-        log.debug(f'delegates={self._delegates}')
+        log.debug('delegates={}'.format(self._delegates))
         for to, funcs in self._delegates.items():
             funcs = (funcs,) if type(funcs) is str else funcs
             for func in funcs:
@@ -31,7 +32,7 @@ def delegatable(cls):
                 if name == func and hasattr(getattr(self, to), func):
                     # Delegate the call
                     return getattr(getattr(self, to), func)
-        raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+        raise AttributeError("'{}' object has no attribute '{}'".format(type(self).__name__, name))
 
     def _delegate(self, *funcs, to: str) -> Sequence:
         """ Update delegates for delegated object specified by `to` """
