@@ -3,7 +3,7 @@
 
 # Summary
 
-Delegable is a simple Python alternative to Ruby on Rails' delegate module, which makes it easy for any class to delegate functions to an instance of another class. Here's an example:
+Delegable is a simple Python alternative to Ruby on Rails' delegate module, which makes delegation easy. It enables any class to delegate its functions to an instance of another one. Here's an example:
 
 ```python
 @delegable
@@ -35,7 +35,7 @@ pip install delegable
 
 #### Basic Usage
 
-Place @delegable on the top of a class you want to make delegable.
+Place @delegable.delegator on the top of a class in which you want to enable delegation.
 
 ```python
 import delegable
@@ -107,9 +107,7 @@ This project uses [tox](https://tox.readthedocs.io/) to test it against differen
 
 ### Set up
 
-```sh
-pyenv global 3.5.9 3.6.10 3.7.7 3.8.2
-```
+You have to have pyenv installed to run tox in this project.
 
 
 ### Test
