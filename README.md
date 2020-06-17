@@ -1,4 +1,4 @@
-# Delegatable
+# Delegable
 
 
 # Summary
