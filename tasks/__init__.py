@@ -90,6 +90,12 @@ def pip_install_test(context):
     return run('pip install -r testing_requirements.txt')
 
 
+@task
+def deploy_prod(context):
+    run('python setup.py bdist_wheel')
+    return run('twine upload  --skip-existing --repository pypi dist/*')
+
+
 namespace = Collection()
 
 
@@ -105,3 +111,8 @@ namespace.add_collection(install)
 install.add_task(pip_install_all, name='all')
 install.add_task(pip_install_requirements, name='prod')
 install.add_task(pip_install_test, name='test')
+
+
+deploy = Collection('deploy')
+namespace.add_collection(deploy)
+deploy.add_task(deploy_prod, default=True)
